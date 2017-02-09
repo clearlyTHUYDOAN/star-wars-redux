@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 
 import App from './App';
 import './index.css';
-// TO-DO: Reducers go here later. 
+// TO-DO: Reducers import goes here later. 
 
 // The store is made by the function createStore (imported from Redux). It's passed the (combined) "reducer". 
 // A function combines all the reducers and that is passed into createStore. 

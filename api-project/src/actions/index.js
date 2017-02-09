@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 export const ACTION_TYPES = {
-    // action types
+    // action types with string values
 }
 
 export function getCharacters() {
@@ -10,7 +10,7 @@ export function getCharacters() {
     // Whatever you pass into dispatch, that gets called in the action. This is an example of a useful thunk.
     // - A thunk is anything that hides something else. Usually it's a function hiding another function(s).
 
-    return function(dispatch) {
-        // api request
+    return function(dispatch) { // Dispatch makes sure reducer gets data.
+        // api request with jquery
     }
 } 
