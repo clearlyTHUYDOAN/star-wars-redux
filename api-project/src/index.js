@@ -6,9 +6,9 @@ import thunk from 'redux-thunk';
 
 import App from './App';
 import './index.css';
-// reducers go here later. 
+// TO-DO: Reducers go here later. 
 
-// The store is made by the function createStore (imported from Redux). It's passed the "reducer". 
+// The store is made by the function createStore (imported from Redux). It's passed the (combined) "reducer". 
 // A function combines all the reducers and that is passed into createStore. 
 
 // Redux allows for middleware. Middleware describes special functions that occur at specific times during the regular process
@@ -19,9 +19,9 @@ const store = createStore(reducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(
-  <Provider>
+  <Provider store={ store }>
     <App />
-  </Provider>, // comma goes after the last tag. 
+  </Provider>, // Comma goes after the last tag. 
   document.getElementById('root')
 );
 
