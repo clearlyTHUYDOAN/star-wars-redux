@@ -42,3 +42,10 @@ ReactDOM.render(
 // and then pass the store to our components with Provider.
 // 4) Create constants as you go.
 // 5) Test. 
+
+// MODULES:
+// - react:
+// - react-dom: 
+// - redux: 
+// - react-redux:
+// - redux-thunk: 
