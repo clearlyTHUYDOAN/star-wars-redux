@@ -6,7 +6,7 @@ import { Characters } from './components/characters';
 import './App.css';
 
 const mapStateToProps = state => ({ // Makes state available as props.
-  characters: state.test
+  characters: state.characters.list
 })
 
 const mapDispatchToProps = { // Makes actions available as props.
@@ -14,11 +14,20 @@ const mapDispatchToProps = { // Makes actions available as props.
 }
 
 class App extends Component {
+  componentDidMount() {
+    this.props.getCharacters(); // Triggers action. Reducer takes the current state, that action, and returns new state. Re-render.
+  }
+
   render() {
+    const { characters } = this.props;
+    console.log(this.props.getCharacters); // This is the action with the dispatch. 
+    console.log(this.props.characters);
+
     return (
       <div className="App">
         <h1>Star Wars API</h1>
           <Characters />
+          {characters.map((character, index) => <h3 key={index}>{character.name}</h3>)}
       </div>
     );
   }

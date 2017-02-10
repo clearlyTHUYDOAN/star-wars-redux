@@ -7,7 +7,7 @@ export const ACTION_TYPES = {
     getCharacters: 'GET_CHARACTERS'
 }
 
-export function getCharacters() {
+export function getCharacters() { // Actions are always functions?
     
     // To make sure the reducer actually gets the intended data, you can make your action use dispatch as a parameter.
     // Whatever you pass into dispatch, that gets called in the action. This is an example of a useful thunk.
@@ -19,9 +19,9 @@ export function getCharacters() {
             .then(response => {
                 dispatch({
                     type: ACTION_TYPES.getCharacters, // ... from ACTION_TYPES
-                    // payload: {
-
-                    // }
+                    payload: {
+                        characters: response.results // payload.characters gets passed to the reducer.
+                    }
                 })
             })
     }
