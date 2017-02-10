@@ -15,8 +15,6 @@ export function getCharacters() { // Actions are always functions?
 
     return function(dispatch) { // Dispatch makes sure reducer gets data.
         // api request with jquery
-        // let test = 'http://swapi.co/api/people/';
-        // console.log(test)
         // console.log(`Imported URL: ${GET_ALL_CHARACTERS_URL}`); // Doesn't like this import? Only works with curly brackets? { url } 
         $.get(GET_ALL_CHARACTERS_URL)
             .then(response => {
