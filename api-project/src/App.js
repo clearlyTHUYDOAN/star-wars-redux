@@ -15,13 +15,14 @@ const mapDispatchToProps = { // Makes actions available as props.
 
 class App extends Component {
   componentDidMount() {
-    this.props.getCharacters(); // Triggers action. Reducer takes the current state, that action, and returns new state. Re-render.
+    this.props.getCharacters(); // Triggers the action made accessible through mapDispatchToProps. 
+    // Reducer takes the current state, that action, and returns new state. Re-render.
   }
 
   render() {
-    const { characters } = this.props; // Destructuring the state. 
-    // console.log(this.props.getCharacters); // This is the action with the dispatch. 
-    // console.log(this.props.characters); // This is the state. 
+    const { characters } = this.props; // Destructuring the state made accessible through mapStateToProps. 
+    // console.log(this.props.getCharacters); // This is the action with the dispatch in actions/index.js. 
+    // console.log(this.props.characters); // This is the state in reducers/starwars.js. 
 
     return (
       <div className="App">
