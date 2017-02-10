@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux' // Connect function at the bottom comes from Redux. It connects our application to Redux. 
+import { connect } from 'react-redux'; // Connect function at the bottom comes from Redux. It connects our application to Redux. 
 
-import Characters from './components/characters'
+import { getCharacters } from './actions/index';
+import { Characters } from './components/characters';
 import './App.css';
 
 const mapStateToProps = state => ({ // Makes state available as props.
-  characters = state.test
+  characters: state.test
 })
 
 const mapDispatchToProps = { // Makes actions available as props.
