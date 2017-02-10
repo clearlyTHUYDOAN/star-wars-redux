@@ -20,14 +20,14 @@ class App extends Component {
 
   render() {
     const { characters } = this.props; // Destructuring the state. 
-    console.log(this.props.getCharacters); // This is the action with the dispatch. 
-    console.log(this.props.characters); // This is the state. CURRENTLY COMING BACK AS UNDEFINED. 
+    // console.log(this.props.getCharacters); // This is the action with the dispatch. 
+    // console.log(this.props.characters); // This is the state. 
 
     return (
       <div className="App">
         <h1>Star Wars API</h1>
           <Characters />
-          {characters.map((character, index) => <h3 key={index}>{character.name}</h3>)}
+          {characters.map((character, index) => <h4 key={index}>{character.name}</h4>)}
       </div>
     );
   }

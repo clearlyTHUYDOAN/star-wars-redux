@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-import GET_ALL_CHARACTERS_URL from '../constants/api-url'
+import { GET_ALL_CHARACTERS_URL } from '../constants/api-url'
 
 export const ACTION_TYPES = {
     // action types with string values
@@ -15,12 +15,11 @@ export function getCharacters() { // Actions are always functions?
 
     return function(dispatch) { // Dispatch makes sure reducer gets data.
         // api request with jquery
-        let test = 'http://swapi.co/api/people/';
-        console.log(test)
-        // console.log(GET_ALL_CHARACTERS_URL); // Doesn't like this import?'
-        $.get(test) // URL is undefined?
+        // let test = 'http://swapi.co/api/people/';
+        // console.log(test)
+        // console.log(`Imported URL: ${GET_ALL_CHARACTERS_URL}`); // Doesn't like this import? Only works with curly brackets? { url } 
+        $.get(GET_ALL_CHARACTERS_URL)
             .then(response => {
-                // console.log(`API: ${response}`);
                 dispatch({
                     type: ACTION_TYPES.getCharacters, // ... from ACTION_TYPES
                     payload: {
