@@ -9,4 +9,5 @@ const INITIAL_STATE = {
 // reducer
 export const characters = (state = INITIAL_STATE, {type, payload}) => {
     // switch cases for action types 
+    
 }

@@ -4,12 +4,12 @@ import { connect } from 'react-redux' // Connect function at the bottom comes fr
 import Characters from './components/characters'
 import './App.css';
 
-const mapStateToProps = state => ({
-  // state here
+const mapStateToProps = state => ({ // Makes state available as props.
+  characters = state.test
 })
 
-const mapDispatchToProps = {
-  // actions here
+const mapDispatchToProps = { // Makes actions available as props.
+  getCharacters
 }
 
 class App extends Component {
@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Star Wars API</h1>
-        <Characters />
+          <Characters />
       </div>
     );
   }
