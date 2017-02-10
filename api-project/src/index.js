@@ -7,7 +7,6 @@ import thunk from 'redux-thunk';
 import App from './App';
 import './index.css';
 import reducer from './reducers/index'
-// TO-DO: Reducers import goes here later. 
 
 // The store is made by the function createStore (imported from Redux). It's passed the (combined) "reducer". 
 // A function combines all the reducers and that is passed into createStore. 
@@ -20,14 +19,16 @@ const store = createStore(reducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(
-  <Provider store={ store }>
+  <Provider store={ store } > 
     <App />
   </Provider>, // Comma goes after the last tag. 
   document.getElementById('root')
 );
 
 // Provider makes the Redux store available to the connect() calls in the component hierarchy below. 
-// Normally, you can’t use connect() without wrapping the root component in <Provider>.
+// Normally, you can’t use connect() without wrapping the root component in <Provider>:
+// Store is a required prop type of Provider.
+// If you don't use provider, you have to pass store to Connect(App) in another way.
 // If using react-router, put Provider on the outermost level, outside the router. 
 
 
@@ -44,8 +45,8 @@ ReactDOM.render(
 // 5) Test. 
 
 // MODULES:
-// - react:
-// - react-dom: 
-// - redux: 
-// - react-redux:
-// - redux-thunk: 
+// - react: React, Component
+// - react-dom: ReactDOM
+// - redux: createStore, applyMiddleware, combineReducers
+// - react-redux: Provider, connect
+// - redux-thunk: thunk
