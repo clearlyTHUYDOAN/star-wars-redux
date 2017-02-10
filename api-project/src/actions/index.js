@@ -15,8 +15,12 @@ export function getCharacters() { // Actions are always functions?
 
     return function(dispatch) { // Dispatch makes sure reducer gets data.
         // api request with jquery
-        $.get(GET_ALL_CHARACTERS_URL)
+        let test = 'http://swapi.co/api/people/';
+        console.log(test)
+        // console.log(GET_ALL_CHARACTERS_URL); // Doesn't like this import?'
+        $.get(test) // URL is undefined?
             .then(response => {
+                // console.log(`API: ${response}`);
                 dispatch({
                     type: ACTION_TYPES.getCharacters, // ... from ACTION_TYPES
                     payload: {
