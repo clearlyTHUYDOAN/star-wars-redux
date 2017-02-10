@@ -21,7 +21,7 @@ class App extends Component {
   render() {
     const { characters } = this.props; // Destructuring the state. 
     console.log(this.props.getCharacters); // This is the action with the dispatch. 
-    console.log(this.props.characters); // This is the state.
+    console.log(this.props.characters); // This is the state. CURRENTLY COMING BACK AS UNDEFINED. 
 
     return (
       <div className="App">
