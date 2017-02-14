@@ -23,6 +23,7 @@ class App extends Component {
     const { characters } = this.props; // Destructuring the state made accessible through mapStateToProps. 
     // console.log(this.props.getCharacters); // This is the action with the dispatch in actions/index.js. 
     // console.log(this.props.characters); // This is the state in reducers/starwars.js. 
+    console.log(this.props); // props is an object.
 
     return (
       <div className="App">
