@@ -10,6 +10,8 @@ import reducer from './reducers/index'
 
 // The store is made by the function createStore (imported from Redux). It's passed the (combined) "reducer". 
 // A function combines all the reducers and that is passed into createStore. 
+// Actions are the only source of information for the store.
+// getState() allows access to the state.
 
 // Redux allows for middleware. Middleware describes special functions that occur at specific times during the regular process
 // of how Redux works. If you want to intercept these things in the middle, you use middleware. 

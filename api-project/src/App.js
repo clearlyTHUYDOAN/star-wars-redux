@@ -38,3 +38,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(App);
 // Connect function at the bottom comes from Redux. It connects our application to Redux. 
 // Very important. Everything goes through it.
 // It does not modify the component class passed to it; instead, it returns a new, connected component class for you to use.
+
+// The dispatch() function can be accessed directly from the store as store.dispatch(), but more likely it will be accessed using
+// a helper like react-redux's connect();
+// store.dispatch() sends actions to the store. 
