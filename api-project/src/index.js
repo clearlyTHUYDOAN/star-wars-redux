@@ -51,6 +51,11 @@ ReactDOM.render(
 // *) Root reducer may combine output of multiple reducers into a single state tree. 
 // 3) The redux store saves the complete state stree returned by the root reducer. 
 // - New tree is now the next state of the app.
+// At that point, what you’ll notice is the mapStateToProps functions on your smart components fire - and the new overall state 
+// is available. What you aren’t seeing is under the hood, when this function fires, it almost immediately afterwards 
+// fires a setState() function _under the hood_ - you can’t see it, but because it does this, suddenly your component rerenders.
+// - This is how React and Redux are connected. 
+// - Connect literally connects the store's lifecycle and state to the component's lifecycle and props.
 // - Every listener registered with store.subscribe(listener) will now be invoked.  
 
 
