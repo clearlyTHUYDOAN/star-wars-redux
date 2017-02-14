@@ -35,6 +35,7 @@ ReactDOM.render(
 // All container components (smart, usually stateful components) need access to the store so they can subscribe to it.
 // - Recommended way is to use a special React-Redux component called <Provider> to make the store available to all container comps
 // without passing explicitly. So in between Provider tags, that's where the container components go.
+// You only need to use it once.
 
 // If you don't use provider, you have to pass store to Connect(App) in another way.
 // If using react-router, put Provider on the outermost level, outside the router. 
