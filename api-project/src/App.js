@@ -5,11 +5,11 @@ import { getCharacters } from './actions/index';
 import { Characters } from './components/characters';
 import './App.css';
 
-const mapStateToProps = state => ({ // Makes state available as props.
+const mapStateToProps = state => ({ // Makes state available to the app as props through connect().
   characters: state.characters.list
 })
 
-const mapDispatchToProps = { // Makes actions available as props.
+const mapDispatchToProps = { // Makes actions available as props. It receives dispatch() and returns callback as props.
   getCharacters
 }
 
@@ -35,9 +35,11 @@ class App extends Component {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App); 
-// Connect function at the bottom comes from Redux. It connects our application to Redux. 
+// Connect function at the bottom comes from Redux. It connects our smart application / container components to Redux. 
 // Very important. Everything goes through it.
 // It does not modify the component class passed to it; instead, it returns a new, connected component class for you to use.
+// To use connect(), you need to define a special function called mapStateToProps.
+// - This tells how to transform the store into the props you want to pass to a presentational component you are wrapping.
 
 // The dispatch() function can be accessed directly from the store as store.dispatch(), but more likely it will be accessed using
 // a helper like react-redux's connect();
