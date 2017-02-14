@@ -6,7 +6,8 @@ import { Characters } from './components/characters';
 import './App.css';
 
 const mapStateToProps = state => ({ // Makes state available to the app as props through connect().
-  characters: state.characters.list
+  characters: state.characters.list,
+  title: state.characters.test
 })
 
 const mapDispatchToProps = { // Makes actions available as props. It receives dispatch() and returns callback as props.
@@ -20,7 +21,7 @@ class App extends Component {
   }
 
   render() {
-    const { characters } = this.props; // Destructuring the state made accessible through mapStateToProps. 
+    const { characters, title } = this.props; // Destructuring the state made accessible through mapStateToProps. 
     // console.log(this.props.getCharacters); // This is the action with the dispatch in actions/index.js. 
     // console.log(this.props.characters); // This is the state in reducers/starwars.js. 
     console.log(this.props); // props is an object.
@@ -28,7 +29,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Star Wars API</h1>
-          <Characters />
+          <Characters title={title}/>
           {characters.map((character, index) => <h4 key={index}>{character.name}</h4>)}
       </div>
     );
