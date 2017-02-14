@@ -12,6 +12,7 @@ import reducer from './reducers/index'
 // A function combines all the reducers and that is passed into createStore. 
 // Actions are the only source of information for the store.
 // getState() allows access to the state.
+// dispatch(action) allows state to be updated.
 
 // Redux allows for middleware. Middleware describes special functions that occur at specific times during the regular process
 // of how Redux works. If you want to intercept these things in the middle, you use middleware. 
@@ -35,7 +36,17 @@ ReactDOM.render(
 
 
 
-// Redux Flow:
+// Data Flow:
+// 1) store.dispatch(action) is called to update the state by sending actions to the store.  
+// - Can call this anywhere in your app.
+// 2) The redux store calls the reducer function that was passed to it (in createStore).
+// - Store will pass two arguments to the reducer: current state and the action.  
+// *) Root reducer may combine output of multiple reducers into a single state tree. 
+// 3) The redux store saves the complete state stree returned by the root reducer. 
+// - New tree is now the next state of the app.
+// - Every listener registered with store.subscribe(listener) will now be invoked. 
+
+// Redux Organizational Flow:
 // - Consider organizing with these folders: actions, components, constants, reducers. 
 // - Then App and Index in top src folder. 
 // 1) Set up main component, action(s) and reducer(s). 

@@ -7,7 +7,7 @@ const INITIAL_STATE = {
 }
 
 // reducer
-export const characters = (state = INITIAL_STATE, {type, payload}) => {
+export const characters = (state = INITIAL_STATE, {type, payload}) => { // store passes state and action to reducer.
     // switch cases for action types 
     switch (type) {
         case ACTION_TYPES.getCharacters:
